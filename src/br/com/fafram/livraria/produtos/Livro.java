@@ -7,6 +7,7 @@ package br.com.fafram.livraria.produtos;
 
 import br.com.fafram.livraria.produtos.Produto;
 import br.com.fafram.livraria.Autor;
+import br.com.fafram.livraria.exception.AutorNuloException;
 
 /**
  *
@@ -22,6 +23,11 @@ public abstract class Livro implements Produto {
     private Autor autor;
     
     public Livro(Autor autor){
+        
+        if (autor == null) {            
+            throw new AutorNuloException(
+                    "O Autor do Livro não pode ser nulo");
+        }
         this.autor = autor;
     }
       

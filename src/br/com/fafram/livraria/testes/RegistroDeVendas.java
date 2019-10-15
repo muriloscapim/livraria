@@ -42,10 +42,32 @@ public class RegistroDeVendas {
         }
         */
         
+        /*
+        // Tratando as exceções de forma mais genérica
         for (int i = 0; i <= produtos.size(); i++) {
-            Produto produto = produtos.get(i);
-            if(produto != null) {
-                System.out.println(produto.getValor());
+            try {
+                Produto produto = produtos.get(i);
+                if(produto != null) {
+                    System.out.println(produto.getValor());
+                }
+            } catch (Exception e) {
+                System.out.println("deu exception no indice: " + i);
+                e.printStackTrace();
+            }
+        }
+        */
+        
+         // Tratativa diferente para cada tipo de exceção
+        for (int i = 0; i <= produtos.size(); i++) {
+            try {
+                Produto produto = produtos.get(i);
+                if(produto != null) {
+                    System.out.println(produto.getValor());
+                }
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("deu exception no indice: " + i);
+            } catch (NullPointerException e) {
+                System.out.println("Lista não foi instanciada!");
             }
         }
         
