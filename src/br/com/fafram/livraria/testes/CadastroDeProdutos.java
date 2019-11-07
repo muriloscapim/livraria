@@ -7,6 +7,8 @@ package br.com.fafram.livraria.testes;
 
 import br.com.fafram.livraria.Autor;
 import br.com.fafram.livraria.produtos.LivroFisico;
+import br.com.fafram.livraria.produtos.Produto;
+import java.util.List;
 
 /**
  *
@@ -26,5 +28,11 @@ public class CadastroDeProdutos {
         
         RepositorioDeProdutos repo = new RepositorioDeProdutos();
         repo.adiciona(fisico);
+        
+        List<Produto> produtos = repo.lista();
+        for (Produto produto : produtos) {
+            System.out.println("Nome" + produto.getNome());
+            System.out.println("Descrição: " + produto.getDescricao());
+        }
     } 
 }

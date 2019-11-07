@@ -16,17 +16,12 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     
     public Connection getConnection() {
-        String url = "jdbc:postgresql://localhost:5437/livraria";
+        String url = "jdbc:postgresql://localhost:5432/livraria";
         try {
             return DriverManager.getConnection(url, "postgres",
-                    "123456");
+                    "7654321");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-    
-    public static void main(String[] args) {
-        Connection conn = new ConnectionFactory().getConnection();
-        System.out.println("Conectado ao banco");
     }
 }

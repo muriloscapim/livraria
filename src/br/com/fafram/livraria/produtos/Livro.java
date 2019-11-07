@@ -15,6 +15,7 @@ import br.com.fafram.livraria.exception.AutorNuloException;
  */
 public abstract class Livro implements Produto {
     
+    private Integer id;
     private String nome;
     private String descricao;
     private double valor;
@@ -41,6 +42,14 @@ public abstract class Livro implements Produto {
         System.out.println("--");
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }
