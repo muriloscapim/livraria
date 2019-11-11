@@ -5,11 +5,11 @@
  */
 package br.com.fafram.livraria.testes;
 
-import br.com.fafram.livraria.testes.CarrinhoDeCompras;
-import br.com.fafram.livraria.produtos.Ebook;
-import br.com.fafram.livraria.produtos.LivroFisico;
-import br.com.fafram.livraria.Autor;
-import br.com.fafram.livraria.produtos.Produto;
+import br.com.fafram.livraria.modelo.CarrinhoDeCompras;
+import br.com.fafram.livraria.modelo.produtos.Ebook;
+import br.com.fafram.livraria.modelo.produtos.LivroFisico;
+import br.com.fafram.livraria.modelo.Autor;
+import br.com.fafram.livraria.modelo.produtos.Produto;
 import java.util.List;
 
 /**

@@ -5,9 +5,9 @@
  */
 package br.com.fafram.livraria.testes;
 
-import br.com.fafram.livraria.produtos.Ebook;
-import br.com.fafram.livraria.produtos.LivroFisico;
-import br.com.fafram.livraria.Autor;
+import br.com.fafram.livraria.modelo.produtos.Ebook;
+import br.com.fafram.livraria.modelo.produtos.LivroFisico;
+import br.com.fafram.livraria.modelo.Autor;
 
 /**
  *

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fafram.livraria.testes;
+package br.com.fafram.livraria.modelo;
 
-import br.com.fafram.livraria.produtos.Produto;
+import br.com.fafram.livraria.modelo.produtos.Produto;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +17,6 @@ public class CarrinhoDeCompras {
     
     private double total;
     private List<Produto> produtos;
-    private int contador = 0;
     
     public CarrinhoDeCompras() {
         this.produtos = new ArrayList<Produto>();

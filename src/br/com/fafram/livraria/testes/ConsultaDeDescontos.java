@@ -5,8 +5,6 @@
  */
 package br.com.fafram.livraria.testes;
 
-import br.com.fafram.livraria.produtos.GerenciadorDeCupons;
-
 /**
  *
  * @author MuriloScapim

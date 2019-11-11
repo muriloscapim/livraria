@@ -5,9 +5,10 @@
  */
 package br.com.fafram.livraria.testes;
 
-import br.com.fafram.livraria.Autor;
-import br.com.fafram.livraria.produtos.LivroFisico;
-import br.com.fafram.livraria.produtos.Produto;
+import br.com.fafram.livraria.dao.ProdutoDAO;
+import br.com.fafram.livraria.modelo.Autor;
+import br.com.fafram.livraria.modelo.produtos.LivroFisico;
+import br.com.fafram.livraria.modelo.produtos.Produto;
 import java.util.List;
 
 /**
@@ -25,14 +26,22 @@ public class CadastroDeProdutos {
         fisico.setDescricao("Livro sobre testes");
         fisico.setValor(59.90);
         fisico.setIsbn("123-45-678-9123-4");
+        fisico.setId(1);
         
-        RepositorioDeProdutos repo = new RepositorioDeProdutos();
-        repo.adiciona(fisico);
+        ProdutoDAO dao = new ProdutoDAO();
+        dao.adiciona(fisico);
         
-        List<Produto> produtos = repo.lista();
+        dao.altera(fisico);
+        
+        dao.remove(fisico);
+        
+        List<Produto> produtos = dao.lista();
         for (Produto produto : produtos) {
+            System.out.println("Id: " + produto.getId());
             System.out.println("Nome" + produto.getNome());
             System.out.println("Descrição: " + produto.getDescricao());
+            System.out.println("Valor: " + produto.getValor());
+            System.out.println("Isbn: " + produto.getIsbn());
         }
     } 
 }

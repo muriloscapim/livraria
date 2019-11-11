@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fafram.livraria.testes;
+package br.com.fafram.livraria.dao;
 
-import br.com.fafram.livraria.Autor;
+import br.com.fafram.livraria.modelo.Autor;
 import br.com.fafram.livraria.db.ConnectionFactory;
-import br.com.fafram.livraria.produtos.LivroFisico;
-import br.com.fafram.livraria.produtos.Produto;
+import br.com.fafram.livraria.modelo.produtos.LivroFisico;
+import br.com.fafram.livraria.modelo.produtos.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @author MuriloScapim
  */
-public class RepositorioDeProdutos {
+public class ProdutoDAO {
     
     public void adiciona(Produto produto) {
         PreparedStatement ps;
@@ -68,5 +68,42 @@ public class RepositorioDeProdutos {
             throw new RuntimeException(e);
         }
         return produtos;
-    }  
+    }
+    
+    public void altera(Produto produto) {
+        PreparedStatement ps;
+        
+        try (Connection conn =
+                new ConnectionFactory().getConnection()) {
+            ps = conn.prepareStatement("update produtos set nome=?,"
+                    + "descricao=? valor=?, isbn=? where id_produto=?");
+            
+            ps.setString(1, produto.getNome());
+            ps.setString(2, produto.getDescricao());
+            ps.setDouble(3, produto.getValor());
+            ps.setString(4, produto.getIsbn());
+            ps.setInt(5, produto.getId());
+            
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    public void remove(Produto produto) {
+        PreparedStatement ps;
+        
+        try (Connection conn =
+                new ConnectionFactory().getConnection()) {
+            ps = conn.prepareStatement("delete from produtos"
+                    + "where id_produto=?");
+            
+            ps.setInt(1, produto.getId());
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

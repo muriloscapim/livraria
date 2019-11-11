@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fafram.livraria.produtos;
+package br.com.fafram.livraria.modelo.produtos;
 
-import br.com.fafram.livraria.produtos.Livro;
-import br.com.fafram.livraria.Autor;
+import br.com.fafram.livraria.modelo.produtos.Livro;
+import br.com.fafram.livraria.modelo.Autor;
 
 /**
  *

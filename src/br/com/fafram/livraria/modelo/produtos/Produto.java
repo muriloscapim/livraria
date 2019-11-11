@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fafram.livraria.produtos;
+package br.com.fafram.livraria.modelo.produtos;
 
 /**
  *
  * @author MuriloScapim
  */
 public interface Produto {
+    public abstract Integer getId();
     public abstract double getValor();
     public abstract String getNome();
     public abstract String getDescricao();

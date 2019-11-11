@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fafram.livraria.produtos;
+package br.com.fafram.livraria.modelo.produtos;
 
-import br.com.fafram.livraria.produtos.Produto;
-import br.com.fafram.livraria.produtos.Promocional;
-import br.com.fafram.livraria.Editora;
+import br.com.fafram.livraria.modelo.produtos.Produto;
+import br.com.fafram.livraria.modelo.produtos.Promocional;
+import br.com.fafram.livraria.modelo.Editora;
 
 /**
  *
@@ -15,6 +15,7 @@ import br.com.fafram.livraria.Editora;
  */
 public class Revista implements Produto, Promocional {
     
+    private Integer id;
     private String nome;
     private String descricao;
     private double valor;
@@ -29,6 +30,14 @@ public class Revista implements Produto, Promocional {
         double desconto = getValor() * porcentagem;
         setValor(getValor() - desconto);
         return true;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
