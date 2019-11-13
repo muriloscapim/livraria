@@ -17,11 +17,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Cuida do acesso aos dados da classe {@link Produto}
  * @author MuriloScapim
  */
 public class ProdutoDAO {
     
+    /**
+     * Realiza a inserção do produto no banco de dados
+     * @param produto que deverá ser adicionado no banco
+     * @throws RuntimeException em caso de erros
+     */
     public void adiciona(Produto produto) {
         PreparedStatement ps;
         
@@ -42,6 +47,11 @@ public class ProdutoDAO {
         }
     }
     
+    /**
+     * Lista todos os produtos do banco de dados
+     * @return {@link List} com todos os produtos
+     * @throws RuntimeException em caso de erros
+     */
     public List<Produto> lista() {
         List<Produto> produtos = new ArrayList<Produto>();
                 
@@ -70,6 +80,10 @@ public class ProdutoDAO {
         return produtos;
     }
     
+    /**
+     * Altera um produto salvo no banco de dados
+     * @param produto que deverá ser atualizado no banco
+     */
     public void altera(Produto produto) {
         PreparedStatement ps;
         
@@ -91,6 +105,10 @@ public class ProdutoDAO {
         }
     }
     
+    /**
+     * Remove um produto salvo no banco de dados
+     * @param produto que deverá ser removido
+     */
     public void remove(Produto produto) {
         PreparedStatement ps;
         

@@ -9,6 +9,7 @@ import br.com.fafram.livraria.modelo.CarrinhoDeCompras;
 import br.com.fafram.livraria.modelo.produtos.Ebook;
 import br.com.fafram.livraria.modelo.produtos.LivroFisico;
 import br.com.fafram.livraria.modelo.Autor;
+import br.com.fafram.livraria.modelo.produtos.MiniLivro;
 import br.com.fafram.livraria.modelo.produtos.Produto;
 import java.util.List;
 
@@ -37,6 +38,16 @@ public class RegistroDeVendas {
         
         List<Produto> produtos = carrinho.getProdutos();
               
+        produtos.forEach(p -> {
+            if (p instanceof LivroFisico) {
+                ((LivroFisico) p).mostrarDetalhes();
+            } else if (p instanceof Ebook) {
+                ((Ebook) p).mostrarDetalhes();
+            } else if (p instanceof MiniLivro) {
+                ((MiniLivro) p).mostrarDetalhes();
+            }
+        });
+        
         /* for (Produto produto : produtos) {
             System.out.println(produto);
         }
@@ -55,7 +66,6 @@ public class RegistroDeVendas {
                 e.printStackTrace();
             }
         }
-        */
         
          // Tratativa diferente para cada tipo de exceção
         for (int i = 0; i <= produtos.size(); i++) {
@@ -72,5 +82,6 @@ public class RegistroDeVendas {
         }
         
         System.out.println("Fui executado!");
+        */
     }
 }

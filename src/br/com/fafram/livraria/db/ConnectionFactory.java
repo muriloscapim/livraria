@@ -10,11 +10,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
+ * Classe responsável por fazer as devidas conexões de acesso
+ * ao banco de dados
  * @author MuriloScapim
  */
 public class ConnectionFactory {
     
+    /**
+     * Realiza a abertura de conexão com o banco de dados
+     * @return {@link Connection} com a conexão aberta
+     */
     public Connection getConnection() {
         String url = "jdbc:postgresql://localhost:5432/livraria";
         try {

@@ -32,15 +32,7 @@ public abstract class Livro implements Produto {
         this.autor = autor;
     }
       
-    public void mostrarDetalhes() {
-        System.out.println("Mostrando detalhes do livro ");
-        System.out.println("Nome: " + nome);
-        System.out.println("Descrição: " + descricao);
-        System.out.println("Valor: " + valor);
-        System.out.println("ISBN: " + isbn);
-        autor.mostrarDetalhes();
-        System.out.println("--");
-    }
+    public abstract void mostrarDetalhes();
 
     public Integer getId() {
         return id;

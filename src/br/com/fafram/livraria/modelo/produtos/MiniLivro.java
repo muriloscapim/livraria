@@ -17,4 +17,15 @@ public class MiniLivro extends Livro {
     public MiniLivro(Autor autor) {
         super(autor);
     } 
+
+    @Override
+    public void mostrarDetalhes() {
+        System.out.println("Mostrando detalhes do mini livro");
+        System.out.println("Nome: " + super.getNome());
+        System.out.println("Descrição: " + super.getDescricao());
+        System.out.println("Valor: " + super.getValor());
+        System.out.println("ISBN: " + super.getIsbn());
+        super.getAutor().mostrarDetalhes();
+        System.out.println();
+    }
 }

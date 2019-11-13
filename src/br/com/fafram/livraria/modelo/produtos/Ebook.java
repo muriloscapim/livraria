@@ -39,4 +39,16 @@ public class Ebook extends Livro implements Promocional {
     public void setWaterMark(String waterMark) {
         this.waterMark = waterMark;
     }
+
+    @Override
+    public void mostrarDetalhes() {
+        System.out.println("Mostrando detalhes do ebook ");
+        System.out.println("Nome: " + super.getNome());
+        System.out.println("Descrição: " + super.getDescricao());
+        System.out.println("Valor: " + super.getValor());
+        System.out.println("ISBN: " + super.getIsbn());
+        System.out.println("WaterMark: " + this.getWaterMark());
+        super.getAutor().mostrarDetalhes();
+        System.out.println();
+    }
 }

@@ -32,4 +32,15 @@ public class LivroFisico extends Livro implements Promocional {
         setValor(getValor() - desconto);
         return true;
     }
+
+    @Override
+    public void mostrarDetalhes() {
+        System.out.println("Mostrando detalhes do livro físico");
+        System.out.println("Nome: " + super.getNome());
+        System.out.println("Descrição: " + super.getDescricao());
+        System.out.println("Valor: " + super.getValor());
+        System.out.println("ISBN: " + super.getIsbn());
+        super.getAutor().mostrarDetalhes();
+        System.out.println();
+    }
 }
